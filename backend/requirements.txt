@@ -5,3 +5,4 @@ requests
 fpdf
 PyMuPDF
 python-docx
+python-multipart
