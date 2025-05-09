@@ -1,23 +1,21 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Fichiers Python
+__pycache__/
+*.py[cod]
+*.env
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
+# Environnement
+.venv/
+env/
+venv/
 
-# testing
-/coverage
+# VSCode
+.vscode/
 
-# production
-/build
+# Node
+node_modules/
+build/
+dist/
 
-# misc
+# Mac et Windows
 .DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+Thumbs.db

@@ -1,38 +1,213 @@
-.App {
-  text-align: center;
+:root {
+  --background-light: #f5f5f5;
+  --background-dark: #1e1e2f;
+  --text-light: #1e1e2f;
+  --text-dark: #ffffff;
+  --primary-color: #1a73e8;
+  --success-color: #34a853;
+  --error-color: #ea4335;
+  --sidebar-bg: #111827;
+  --message-bg-light: #ffffff;
+  --message-bg-dark: #2e2e3f;
+  --user-msg-bg: #d1e7dd;
+  --input-border: #ccc;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+  background-color: var(--background-light);
+  color: var(--text-light);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app {
+  display: flex;
   min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.app.light {
+  background-color: var(--background-light);
+  color: var(--text-light);
+}
+
+.app.dark {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+.sidebar {
+  width: 250px;
+  background-color: var(--sidebar-bg);
+  color: white;
+  padding: 1rem;
+}
+
+.sidebar h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.main {
+  flex: 1;
   display: flex;
   flex-direction: column;
+  padding: 1rem;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: 1rem;
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.control-button {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.control-button.success {
+  background-color: var(--success-color);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.control-button.success:hover {
+  background-color: #2e7d32;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.control-button.error {
+  background-color: var(--error-color);
+  color: white;
+}
+
+.control-button.error:hover {
+  background-color: #c62828;
+}
+
+.control-button.word {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.control-button.word:hover {
+  background-color: #1558b0;
+}
+
+/* Upload Label Styling */
+.upload-label {
+  background-color: #333;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.upload-label input {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.message-container {
+  flex: 1;
+  overflow-y: auto;
+  background-color: var(--message-bg-light);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.app.dark .message-container {
+  background-color: var(--message-bg-dark);
+}
+
+.message {
+  background-color: #e5e7eb;
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.app.dark .message {
+  background-color: #374151;
+  color: white;
+}
+
+.message.user {
+  background-color: var(--user-msg-bg);
+  text-align: right;
+}
+
+.input-area {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  transition: border-color 0.2s;
+}
+
+.input-area input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.input-area button {
+  padding: 0.75rem 1.25rem;
+  background-color: var(--success-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.input-area button:hover {
+  background-color: #2e7d32;
+}
+.conversation-preview {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2e2e3f;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.conversation-preview button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.conversation-preview button:hover {
+  text-decoration: underline;
 }
