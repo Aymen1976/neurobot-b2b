@@ -1,0 +1,21 @@
+# Fichiers Python
+__pycache__/
+*.py[cod]
+*.env
+
+# Environnement
+.venv/
+env/
+venv/
+
+# VSCode
+.vscode/
+
+# Node
+node_modules/
+build/
+dist/
+
+# Mac et Windows
+.DS_Store
+Thumbs.db
