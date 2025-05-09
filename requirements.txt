@@ -1,8 +1,0 @@
-fastapi
-uvicorn
-groq
-python-dotenv
-python-multipart
-python-docx
-fpdf
-PyMuPDF
